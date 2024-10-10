@@ -1,7 +1,7 @@
 const testUrl = Cypress.config().baseUrl;
-export const createUser = (endpoint, authToken, userEmail) => {
+export const updateUser = (endpoint, authToken, userName, userEmail, userStatus) => {
     return cy.request({
-        method: 'POST',
+        method: 'PATCH',
         url: testUrl + endpoint,
         failOnStatusCode: false,
 
@@ -9,10 +9,9 @@ export const createUser = (endpoint, authToken, userEmail) => {
             'Authorization': 'Bearer ' + authToken
         },
         body: {
-            'name': "Ntest",
-            'gender': "Female",
+            'name': userName,
             'email': userEmail,
-            'status': "active"
+            'status': userStatus
         }
     })
 };

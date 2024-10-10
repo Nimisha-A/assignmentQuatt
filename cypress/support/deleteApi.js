@@ -1,11 +1,11 @@
 const testUrl = Cypress.config().baseUrl;
-export const deleteUser = (endpoint, statusResponse) => {
-    cy.request({
+export const deleteUser = (endpoint, authToken) => {
+    return cy.request({
         method: 'DELETE',
         url: testUrl + endpoint,
         failOnStatusCode: false,
-    }).then((response) => {
-        console.log(response.status)
-        expect(response.status).to.equal(statusResponse);
+        headers: {
+            'Authorization': 'Bearer ' + authToken
+        }
     })
 };
