@@ -1,0 +1,21 @@
+
+name: End to end API tests
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        description: 'API tests'
+        default: 'API'
+        required: true
+        type: string
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Cypress run
+      run: npx cypress run
