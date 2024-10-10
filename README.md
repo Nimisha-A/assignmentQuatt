@@ -46,3 +46,11 @@ Install Cypress via npm:
 * Open Cypress folder from project root
 
   npx cypress run
+
+## Steps to run in Github
+
+1. Go to Actions.
+1. Open End-to-end API tests under Actions.
+1. Click on Run workflow
+
+![1728599502533](image/README/1728599502533.png)
