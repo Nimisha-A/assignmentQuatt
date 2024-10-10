@@ -1,5 +1,7 @@
 name: End-to-end API tests
-on: push
+on: 
+  workflow_dispatch:
+  
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
